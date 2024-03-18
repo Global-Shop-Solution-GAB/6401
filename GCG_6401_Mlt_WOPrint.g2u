@@ -1,0 +1,437 @@
+Program.Sub.ScreenSU.Start
+Gui.SS_Form1..Create(BaseForm)
+Gui.SS_Form1..Caption("Form")
+Gui.SS_Form1..Size(427,552)
+Gui.SS_Form1..MinX(0)
+Gui.SS_Form1..MinY(0)
+Gui.SS_Form1..Position(0,0)
+Gui.SS_Form1..AlwaysOnTop(False)
+Gui.SS_Form1..FontName("Tahoma")
+Gui.SS_Form1..FontSize(8.25)
+Gui.SS_Form1..ControlBox(True)
+Gui.SS_Form1..MaxButton(True)
+Gui.SS_Form1..MinButton(True)
+Gui.SS_Form1..MousePointer(0)
+Gui.SS_Form1..Moveable(True)
+Gui.SS_Form1..Sizeable(True)
+Gui.SS_Form1..ShowInTaskBar(True)
+Gui.SS_Form1..TitleBar(True)
+Gui.SS_Form1..Event(UnLoad,Unload)
+Gui.SS_Form1.txt1_BegWO.Create(TextBox,"",True,110,20,0,8,40,True,0,"Tahoma",8.25,,1)
+Gui.SS_Form1.txt1_endwo.Create(TextBox,"",True,110,20,0,9,91,True,0,"Tahoma",8.25,,1)
+Gui.SS_Form1.lvw1_WO.Create(ListView)
+Gui.SS_Form1.lvw1_WO.Enabled(True)
+Gui.SS_Form1.lvw1_WO.Visible(True)
+Gui.SS_Form1.lvw1_WO.Zorder(0)
+Gui.SS_Form1.lvw1_WO.Size(408,278)
+Gui.SS_Form1.lvw1_WO.Position(9,123)
+Gui.SS_Form1.lvw1_WO.FontName("Tahoma")
+Gui.SS_Form1.lvw1_WO.FontSize(8)
+Gui.SS_Form1.lvw1_WO.View(3)
+Gui.SS_Form1.lvw1_WO.Multiselect(False)
+Gui.SS_Form1.lvw1_WO.CheckBoxes(False)
+Gui.SS_Form1.lvw1_WO.AddListViewColumn("Begining Work Order",2705,0)
+Gui.SS_Form1.lvw1_WO.AddListViewColumn("Ending Work Order",2705,0)
+Gui.SS_Form1.lbl_txt1_BegWO.Create(Label,"Begining Work Order",True,99,13,0,10,24,True,0,"Tahoma",8.25,,0,0)
+Gui.SS_Form1.lbl_txt1_BegWO.BorderStyle(0)
+Gui.SS_Form1.lbl2.Create(Label,"Ending Work Order",True,91,13,0,11,76,True,0,"Tahoma",8.25,,0,0)
+Gui.SS_Form1.lbl2.BorderStyle(0)
+Gui.SS_Form1.cmd_txt1_BegWO.Create(Button)
+Gui.SS_Form1.cmd_txt1_BegWO.Enabled(True)
+Gui.SS_Form1.cmd_txt1_BegWO.Visible(True)
+Gui.SS_Form1.cmd_txt1_BegWO.Zorder(0)
+Gui.SS_Form1.cmd_txt1_BegWO.Size(25,23)
+Gui.SS_Form1.cmd_txt1_BegWO.Position(126,39)
+Gui.SS_Form1.cmd_txt1_BegWO.Caption("^")
+Gui.SS_Form1.cmd_txt1_BegWO.FontName("Tahoma")
+Gui.SS_Form1.cmd_txt1_BegWO.FontSize(8.25)
+Gui.SS_Form1.cmd_txt1_BegWO.Event(Click,cmd_txt1_begwo_click)
+Gui.SS_Form1.cmd_txt1_endwo.Create(Button)
+Gui.SS_Form1.cmd_txt1_endwo.Enabled(True)
+Gui.SS_Form1.cmd_txt1_endwo.Visible(True)
+Gui.SS_Form1.cmd_txt1_endwo.Zorder(0)
+Gui.SS_Form1.cmd_txt1_endwo.Size(24,23)
+Gui.SS_Form1.cmd_txt1_endwo.Position(126,89)
+Gui.SS_Form1.cmd_txt1_endwo.Caption("^")
+Gui.SS_Form1.cmd_txt1_endwo.FontName("Tahoma")
+Gui.SS_Form1.cmd_txt1_endwo.FontSize(8.25)
+Gui.SS_Form1.cmd_txt1_endwo.Event(Click,cmd_txt1_endwo_click)
+Gui.SS_Form1.cmd_lvw1_WOAdd.Create(Button)
+Gui.SS_Form1.cmd_lvw1_WOAdd.Enabled(True)
+Gui.SS_Form1.cmd_lvw1_WOAdd.Visible(True)
+Gui.SS_Form1.cmd_lvw1_WOAdd.Zorder(0)
+Gui.SS_Form1.cmd_lvw1_WOAdd.Size(75,23)
+Gui.SS_Form1.cmd_lvw1_WOAdd.Position(168,38)
+Gui.SS_Form1.cmd_lvw1_WOAdd.Caption("Add")
+Gui.SS_Form1.cmd_lvw1_WOAdd.FontName("Tahoma")
+Gui.SS_Form1.cmd_lvw1_WOAdd.FontSize(8.25)
+Gui.SS_Form1.cmd_lvw1_WOAdd.Event(Click,cmd_lvw1_woadd_click)
+Gui.SS_Form1.cmd_lvw1_WODelete.Create(Button)
+Gui.SS_Form1.cmd_lvw1_WODelete.Enabled(True)
+Gui.SS_Form1.cmd_lvw1_WODelete.Visible(True)
+Gui.SS_Form1.cmd_lvw1_WODelete.Zorder(0)
+Gui.SS_Form1.cmd_lvw1_WODelete.Size(75,23)
+Gui.SS_Form1.cmd_lvw1_WODelete.Position(252,38)
+Gui.SS_Form1.cmd_lvw1_WODelete.Caption("Delete")
+Gui.SS_Form1.cmd_lvw1_WODelete.FontName("Tahoma")
+Gui.SS_Form1.cmd_lvw1_WODelete.FontSize(8.25)
+Gui.SS_Form1.cmd_lvw1_WODelete.Event(Click,cmd_lvw1_wodelete_click)
+Gui.SS_Form1.cmd_lvw1_WOClear.Create(Button)
+Gui.SS_Form1.cmd_lvw1_WOClear.Enabled(True)
+Gui.SS_Form1.cmd_lvw1_WOClear.Visible(True)
+Gui.SS_Form1.cmd_lvw1_WOClear.Zorder(0)
+Gui.SS_Form1.cmd_lvw1_WOClear.Size(75,23)
+Gui.SS_Form1.cmd_lvw1_WOClear.Position(337,38)
+Gui.SS_Form1.cmd_lvw1_WOClear.Caption("Clear")
+Gui.SS_Form1.cmd_lvw1_WOClear.FontName("Tahoma")
+Gui.SS_Form1.cmd_lvw1_WOClear.FontSize(8.25)
+Gui.SS_Form1.cmd_lvw1_WOClear.Event(Click,cmd_lvw1_woclear_click)
+Gui.SS_Form1.lbl3.Create(Label,"No. of Copies:",True,69,13,0,16,410,True,0,"Tahoma",8.25,,0,0)
+Gui.SS_Form1.lbl3.BorderStyle(0)
+Gui.SS_Form1.txtNoCopy.Create(TextBox,"1",True,63,20,0,15,430,True,0,"Tahoma",8.25,,1)
+Gui.SS_Form1.txtNoCopy.NumericOnly(2)
+Gui.SS_Form1.txtRptID.Create(TextBox,"100112",True,100,20,0,116,429,True,0,"Tahoma",8.25,,1)
+Gui.SS_Form1.lbl4.Create(Label,"Report ID:",True,51,13,0,117,412,True,0,"Tahoma",8.25,,0,0)
+Gui.SS_Form1.lbl4.BorderStyle(0)
+Gui.SS_Form1.cmd1_Print.Create(Button)
+Gui.SS_Form1.cmd1_Print.Enabled(True)
+Gui.SS_Form1.cmd1_Print.Visible(True)
+Gui.SS_Form1.cmd1_Print.Zorder(0)
+Gui.SS_Form1.cmd1_Print.Size(75,23)
+Gui.SS_Form1.cmd1_Print.Position(15,472)
+Gui.SS_Form1.cmd1_Print.Caption("Print")
+Gui.SS_Form1.cmd1_Print.FontName("Tahoma")
+Gui.SS_Form1.cmd1_Print.FontSize(8.25)
+Gui.SS_Form1.cmd1_Print.Event(Click,cmd_print1_clickMOD)
+Gui.SS_Form1.cmdReportBrowse.Create(Button)
+Gui.SS_Form1.cmdReportBrowse.Enabled(True)
+Gui.SS_Form1.cmdReportBrowse.Visible(True)
+Gui.SS_Form1.cmdReportBrowse.Zorder(0)
+Gui.SS_Form1.cmdReportBrowse.Size(22,23)
+Gui.SS_Form1.cmdReportBrowse.Position(225,427)
+Gui.SS_Form1.cmdReportBrowse.Caption("^")
+Gui.SS_Form1.cmdReportBrowse.FontName("Tahoma")
+Gui.SS_Form1.cmdReportBrowse.FontSize(8.25)
+Gui.SS_Form1.cmdReportBrowse.Event(Click,cmdReportBrowser_click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Variable.Global.iKey.Declare(Long,0)
+Program.Sub.Preflight.End
+'*******************************
+'GCG_6401
+'Printing Multiple Work Order Labels
+
+'	July 2021, NL
+'*******************************
+ 
+Program.Sub.Main.Start
+Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+
+GUI.SS_Form1..Show
+
+Program.Sub.Main.End
+
+'Print Button
+Program.Sub.cmd_print1_clickMOD.Start
+f.Intrinsic.Control.Try
+
+	'Start ========================================================
+	V.Local.ic.Declare(Long)
+	V.Local.srows.Declare(String)
+	V.Local.iord.Declare(Long)
+	V.Local.srange.Declare(String)
+	V.Local.squery.Declare(String)
+	V.Local.sDate1.Declare(String)
+	V.local.sSql.declare(String)
+	V.local.sret.declare(String)
+	V.local.sError.declare(String)
+	
+	V.Local.BegDate.Declare(String)
+	V.Local.Parameters.Declare(String,"")
+	V.local.sSplitString.declare(String)
+	V.local.sretSplit.declare(String)
+	V.local.sretpiece.declare(String)
+	V.local.sretp.declare(String)
+	
+	v.Local.sJobList.Declare(String)
+	v.Local.sReportID.Declare(String)
+	v.Local.sCopyNo.Declare(String)
+	
+	V.Local.iReportID.Declare(Long)
+	
+	v.Local.iBIRunID.Declare(Long)
+	v.Local.iLogID.Declare(Long)
+	
+	v.Local.sBeginWO.Declare(String)
+	v.Local.sEndingWO.Declare(String)
+	
+	'Disappear the screen
+	Gui.SS_Form1..Visible(False)
+	
+	'********************************
+	'GCG_6401
+	Gui.SS_Form1.lvw1_WO.RetrieveAllListItems(V.Local.srows)
+	
+	'********************************
+	'Validation
+	v.Local.sReportID.Set(v.Screen.SS_Form1!txtRptID.Text)
+	v.Local.sCopyNo.Set(v.Screen.SS_Form1!txtNoCopy.Text)
+	
+	f.Intrinsic.Control.If(v.Local.sReportID,=,"")
+		f.Intrinsic.UI.Msgbox("Please Enter a Report ID.")
+		Gui.SS_Form1..Visible(True)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Local.sCopyNo,=,"")
+		f.Intrinsic.UI.Msgbox("Please Enter No. of Copies.")
+		Gui.SS_Form1..Visible(True)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	'********************************
+	'Get JOB+SUFFIX List
+	F.Intrinsic.Control.If(V.local.srows,<>,"***NORETURN***")
+	
+		'Get JOB+SUFFIX
+		F.Intrinsic.String.Split(V.Local.srows,"*!*",V.Local.srows)
+		F.Intrinsic.Control.For(V.Local.ic,0,V.Local.srows.UBound,1)
+			Gui.SS_Form1.lvw1_WO.RetrieveItemOrdinal(V.local.srows(v.local.ic),V.local.iord)
+			v.Local.srange.Set(v.Screen.SS_Form1!lvw1_WO.ListItemTextExtended(v.Local.iord))
+			F.Intrinsic.String.Split(V.Local.srange,"*!*",V.Local.srange)
+			v.Local.sBeginWO.Set(v.Local.srange(0))
+			v.Local.sEndingWO.Set(v.Local.srange(1))
+
+			'Add JOB+SUFFIX to list
+			f.Intrinsic.Control.If(v.Local.sJobList,=,"")
+				f.Intrinsic.String.Build("H.JOB+'-'+H.SUFFIX between '{0}' and '{1}'", v.Local.sBeginWO, v.Local.sEndingWO, v.Local.sJobList)
+			f.Intrinsic.Control.Else
+				f.Intrinsic.String.Build("{0} OR H.JOB+'-'+H.SUFFIX between '{1}' and '{2}'", v.Local.sJobList, v.Local.sBeginWO, v.Local.sEndingWO, v.Local.sJobList)
+			f.Intrinsic.Control.EndIf
+			
+		F.Intrinsic.Control.Next(V.Local.ic)
+	F.Intrinsic.Control.Endif
+	
+	'Create Dt
+	f.Intrinsic.String.Build("select RTRIM(H.PART) PART, RTRIM(H.DESCRIPTION) DESCR, L.DATE_ITEM_PROM PROM_DATE, H.SALES_ORDER SO, H.SALES_ORDER_LINE SO_LINE, RTRIM(H.JOB) WO, RTRIM(H.SUFFIX) WO_SUFFIX, L.QTY_ORDERED QTY_ON_ORDER, L.UM_INVENTORY INV_UM, C.NAME_CUSTOMER_SHIP SHIP_NAME, C.ADDRESS1_SHIP SHIP_ADDRS1, C.ADDRESS2_SHIP SHIP_ADDRS2, C.CITY_SHIP SHIP_CITY, C.STATE_SHIP SHIP_STATE, C.CODE_ZIP_SHIP SHIP_ZIP, I.ADDRESS3_SHIP SHIP_ADDRS3, ADDRESS4_SHIP SHIP_ADDRS4, ADDRESS5_SHIP SHIP_ADDRS5, L.DATE_ITEM_PROM LBL_CREATE_DATE, '' REV, '' LOCN, '' DRAWING, '' CUSTOMER, '' CUSTOMER_NAME, '' CUSTOMER_PO, '' CUSTOMER_PART, '' SHIP_ID, 2 QTY_ORDERED, 2 QTY_SHIPPED, 2 QTY_BO, 2 WEIGHT, 2 LN_COST, 2 LN_PRICE, 2 LN_DISCOUNT_PRICE, '' SHIP_INTL_ADDRS, '' SHIP_ATTN, '' OH_USER1, '' OH_USER2, '' OH_USER3, '' OH_USER4, '' OH_USER5, '' OL_USER1, '' OL_USER2, '' OL_USER3, '' OL_USER4, '' OL_USER5, L.DATE_ITEM_PROM DATE1, L.DATE_ITEM_PROM DATE2, '' BATCH1, '' BATCH2, L.DATE_ITEM_PROM SHIP_DATE, '' COMMENT1, '' COMMENT2, '' COMMENT3, '' COMMENT4, '' COMMENT5, '' COMMENT1_TITLE, '' COMMENT2_TITLE, '' COMMENT3_TITLE, '' COMMENT4_TITLE, '' COMMENT5_TITLE, '' C_EXTERNAL_ID, '' ALT_DESC_1, '' ALT_DESC_2, 'Date 1' DATE1_TITLE, 'Date 2' DATE2_TITLE from V_JOB_HEADER H left join V_ORDER_LINES L on H.SALES_ORDER = L.ORDER_NO and H.SALES_ORDER_LINE+'0' = L.RECORD_NO left join V_CUSTOMER_SHIPTO C on H.CUSTOMER = C.CUSTOMER left join V_CUSTOMER_INTL I on H.CUSTOMER = I.CUSTOMER where {0}", v.Local.sJobList, v.Local.sSql)
+	
+	f.Intrinsic.Control.If(v.DataTable.dtWORef.Exists)
+		f.Data.Datatable.Close("dtWORef")
+	f.Intrinsic.Control.EndIf
+	
+	'Connect DB
+	f.ODBC.Connection!Con.OpenCompanyConnection
+	'create Dt
+	f.Data.Datatable.CreateFromSQL("dtWORef", "Con", v.Local.sSql, True)
+	
+	'Close DB
+	f.ODBC.Connection!Con.Close	
+	
+	V.Local.iReportID.Set(V.Local.sReportID.Long)
+	
+	'print
+	f.Global.BI.GetRunID(v.Local.iBIRunID)
+	f.Global.BI.StartLogging(v.Local.iBIRunID, v.Local.iReportID, -1,"",v.Local.iLogID)
+	
+	'add columns
+	f.Data.DataTable.AddColumn("dtWORef", "BIRUNID", Long)
+	f.Data.DataTable.SetValue("dtWORef", -1, "BIRUNID", v.Local.iBIRunID)
+	f.Data.Datatable.AddColumn("dtWORef", "Label_Copy", Long)
+	f.Data.Datatable.SetValue("dtWORef", -1, "Label_Copy", v.Local.sCopyNo)
+	f.Data.DataTable.AddColumn("dtWORef", "SEQ", String)
+	f.Data.DataTable.SetValue("dtWORef", -1, "SEQ", "00001")
+	f.Data.DataTable.AddExpressionColumn("dtWORef", "QTY_ON_LABEL", Float, "QTY_ON_ORDER/Label_Copy")
+	
+	f.Global.BI.StopLogging(v.Local.iLogID)
+	
+	f.Global.BI.PrintCodesoftLabelFromDataTable(v.Local.iBIRunID,v.Local.iLogID,"dtWORef","", True)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+
+Program.Sub.cmd_print1_clickMOD.End
+
+'Begining WO Browse Button 
+Program.Sub.cmd_txt1_begwo_click.Start
+f.Intrinsic.Control.Try
+
+	'Start ==========================================================
+	'Beginning Product Line Browser
+	V.Local.sError.Declare(String)
+	V.Local.sSql.Declare(String)
+	V.Local.sTitles.Declare(String)
+	V.Local.sWidths.Declare(String)
+	V.Local.sRet.Declare(String)
+	
+	'get WO and SUFFIX into an ARRAY
+	v.Local.sArray.Declare(String)
+	v.Local.sFullWO.Declare(String)
+	
+	
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	
+	F.Intrinsic.UI.Browser(1000,"",V.Local.sRet)
+	
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*", v.Local.sArray)
+		f.Intrinsic.String.Build("{0}-{1}", v.Local.sArray(0), v.Local.sArray(1), v.Local.sFullWO)
+		Gui.ss_form1.txt1_begwo.Text(v.Local.sFullWO)
+		Gui.SS_Form1.txt1_Endwo.Text(V.Screen.SS_Form1!txt1_Begwo.Text)
+	F.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+
+Program.Sub.cmd_txt1_begwo_click.End
+
+'Ending WO Browse Button
+Program.Sub.cmd_txt1_endwo_click.Start
+f.Intrinsic.Control.Try
+
+	V.Local.sError.Declare(String)
+	V.Local.sSql.Declare(String)
+	V.Local.sTitles.Declare(String)
+	V.Local.sWidths.Declare(String)
+	V.Local.sRet.Declare(String)
+	
+	'************************
+	'get WO and SUFFIX into an ARRAY
+	v.Local.sArray.Declare(String)
+	v.Local.sFullWO.Declare(String)
+	
+	
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	
+	F.Intrinsic.UI.Browser(1000,"",V.Local.sRet)
+	
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",v.Local.sArray)
+		f.Intrinsic.String.Build("{0}-{1}", v.Local.sArray(0), v.Local.sArray(1), v.Local.sFullWO)
+		
+		Gui.ss_form1.txt1_endwo.Text(v.Local.sFullWO)
+		
+		f.Intrinsic.Control.If(v.Screen.SS_Form1!txt1_BegWO.Text,=,"")
+			Gui.ss_form1.txt1_begwo.Text(v.Local.sFullWO)
+		f.Intrinsic.Control.EndIf
+		
+	F.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+
+Program.Sub.cmd_txt1_endwo_click.End
+
+'Report Browser
+Program.Sub.cmdReportBrowser_click.Start
+f.Intrinsic.Control.Try
+
+	'Beginning Report Browser
+	V.Local.sError.Declare(String)
+	V.Local.sSql.Declare(String)
+	V.Local.sTitles.Declare(String)
+	V.Local.sWidths.Declare(String)
+	V.Local.sRet.Declare(String)
+	
+	'get WO and SUFFIX into an ARRAY
+	v.Local.sArray.Declare(String)
+	v.Local.sFullWO.Declare(String)
+	
+	
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	
+	F.Intrinsic.UI.Browser(90010,"",V.Local.sRet)
+	
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*", v.Local.sArray)
+		GUI.SS_Form1.txtRptID.Text(v.Local.sArray(0))
+	F.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	'****************************
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+
+Program.Sub.cmdReportBrowser_click.End
+
+'Modified Add event for GCG_6401
+Program.Sub.cmd_lvw1_woadd_click.Start
+f.Intrinsic.Control.Try
+	
+	F.Intrinsic.control.If(V.screen.SS_Form1!txt1_begwo.text,<," ")
+	F.Intrinsic.control.andIf(V.screen.SS_Form1!txt1_endwo.text,<," ")
+		F.intrinsic.control.exitsub
+	Function.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Math.Add(V.global.iKey,1,V.global.iKey)
+	Gui.SS_Form1.lvw1_wo.AddListItem(V.global.iKey,V.Screen.SS_Form1!txt1_Begwo.Text)
+
+	
+	'Sub Text
+	Gui.SS_Form1.lvw1_wo.SetListItemSubItemText(V.global.iKey,1,V.Screen.SS_Form1!txt1_Endwo.Text)
+	Gui.SS_Form1.txt1_Begwo.Text("")
+	Gui.SS_Form1.txt1_Endwo.Text("")
+		
+	F.Intrinsic.Control.ExitSub
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+
+Program.Sub.cmd_lvw1_woadd_click.End
+
+'Delete Button
+Program.Sub.cmd_lvw1_wodelete_click.Start
+f.Intrinsic.Control.Try
+
+	V.Local.sError.Declare(String)
+	V.Local.iKey.Declare(Long)
+	V.Local.iOrd.Declare(Long)
+	
+	F.Intrinsic.Control.SetErrorHandler("cmd_lvw1_wodelete_Err")
+	F.Intrinsic.Control.ClearErrors
+	
+	V.Local.iKey.Set(V.Screen.SS_Form1!lvw1_wo.SelectedItemKey)
+	Gui.SS_Form1.lvw1_wo.removeitem(V.Local.iKey)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+
+Program.Sub.cmd_lvw1_wodelete_click.End
+
+'Clear Button
+Program.Sub.cmd_lvw1_woclear_click.Start
+f.Intrinsic.Control.Try
+	V.Local.sError.Declare(String)
+	
+	F.Intrinsic.Control.SetErrorHandler("cmd_lvw1_woClear_Err")
+	F.Intrinsic.Control.ClearErrors
+	
+	Gui.SS_Form1.lvw1_wo.ClearItems
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(Catching)
+f.Intrinsic.Control.EndTry
+
+Program.Sub.cmd_lvw1_woclear_click.End
+
+'Catch
+Program.Sub.Catching.Start
+v.Local.sError.Declare(String)
+Function.Intrinsic.String.Concat("Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Program.Sub.Catching.End
+
+Program.Sub.Unload.Start
+f.Intrinsic.Control.End
+Program.Sub.Unload.End
+
+Program.Sub.Comments.Start
+${$5$}$3.0.0.0$}$1
+${$6$}$nle$}$20210720110627708$}$kjzCRYkA6UEoRnCwndYnRQY3L7wF/FsDW8nx/JQHAMmEP7YOh/fHVHxQI+NcDpSi
+Program.Sub.Comments.End
